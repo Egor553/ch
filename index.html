@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Продюсерский разбор</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <style>
+    body {
+      font-family: 'PT Sans', sans-serif;
+      background-color: #1F1F1F; /* Granite background as per presentation */
+      color: #FFFFFF;
+    }
+    .malachite {
+      background-color: #2E8B57; /* Malachite accent */
+    }
+    .malachite:hover {
+      background-color: #257A47;
+    }
+    img.malachite-accent {
+      filter: grayscale(100%);
+      border: 4px solid #2E8B57;
+      box-shadow: 0 0 15px rgba(46, 139, 87, 0.7); /* Enhanced malachite glow */
+      background: #2E8B57; /* Malachite background for photo */
+    }
+    h1, h2 {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    ul {
+      list-style-type: square;
+    }
+    section {
+      border-bottom: 1px solid #2E8B57; /* Subtle malachite separator like PDF pages */
+    }
+  </style>
+</head>
+<body>
+  <!-- Хедер -->
+  <header class="sticky top-0 bg-gray-900 text-white py-4 z-10" data-aos="fade-down">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <h1 class="text-xl md:text-2xl font-bold">ПРОДЮСЕРСКИЙ РАЗБОР</h1>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#about" class="hover:underline">Обо мне</a>
+        <a href="#needs" class="hover:underline">Кому нужен</a>
+        <a href="#how" class="hover:underline">Как проходит</a>
+        <a href="#why" class="hover:underline">Почему я</a>
+        <a href="#pricing" class="hover:underline">Стоимость</a>
+      </nav>
+      <button class="md hidden text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 text-white">
+      <a href="#about" class="block py-2 px-4 hover:bg-gray-800">Обо мне</a>
+      <a href="#needs" class="block py-2 px-4 hover:bg-gray-800">Кому нужен</a>
+      <a href="#how" class="block py-2 px-4 hover:bg-gray-800">Как проходит</a>
+      <a href="#why" class="block py-2 px-4 hover:bg-gray-800">Почему я</a>
+      <a href="#pricing" class="block py-2 px-4 hover:bg-gray-800">Стоимость</a>
+    </div>
+  </header>
+
+  <!-- Главный экран -->
+  <section class="bg-gray-900 py-20 text-center" data-aos="fade-up">
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">ПРОДЮСЕРСКИЙ РАЗБОР</h1>
+      <p class="text-lg md:text-xl mb-6 max-w-2xl mx-auto">Перезагрузка мышления за 2 дня</p>
+      <img src="[URL_ВАШЕГО_ФОТО]" alt="Егор Павлов" class="mx-auto mb-6 w-48 h-48 object-cover rounded-full malachite-accent">
+      <p class="text-lg md:text-xl mb-6 max-w-2xl mx-auto">Сломайте ограничивающие убеждения, освойте инструменты прорыва и начните действовать по-новому. Проверено на топ-артистах, бизнесменах и блогерах.</p>
+      <a href="#pricing" class="inline-block malachite text-white px-6 py-3 rounded-full font-semibold text-lg hover:scale-105 transition-transform">Записаться на разбор</a>
+    </div>
+  </section>
+
+  <!-- Обо мне -->
+  <section id="about" class="py-16 bg-gray-900" data-aos="fade-up">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">ЕГОР ПАВЛОВ — ПРОДЮСЕР И НАСТАВНИК</h2>
+      <ul class="list-square text-lg max-w-2xl mx-auto space-y-4">
+        <li>9 лет в продюсировании проектов и топ-артистов, сотрудничал с: Сергей Жорин (Адвокат Моргена), Эмиль Иманов, Влад Соколовский и сотня других блогеров.</li>
+        <li>10 лет в маркетинге и проведении рекламных кампаний и масштабировании проектов (Третьяковская галерея, Papa Johns, Тинькофф банк и другие).</li>
+        <li>Создатель шоу и образовательных программ, которые меняют жизни.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- С кем работал -->
+  <section id="collaborations" class="py-16 bg-gray-900" data-aos="fade-up">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">С КЕМ РАБОТАЛ</h2>
+      <ul class="list-square text-lg max-w-2xl mx-auto space-y-4">
+        <li>Сергей Жорин (Адвокат Моргена)</li>
+        <li>Эмиль Иманов</li>
+        <li>Влад Соколовский</li>
+        <li>Сотня других блогеров</li>
+        <li>Третьяковская галерея</li>
+        <li>Papa Johns</li>
+        <li>Тинькофф банк</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Кому нужен разбор -->
+  <section id="needs" class="py-16 bg-gray-900" data-aos="fade-up">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">ВАМ НЕОБХОДИМ РАЗБОР, ЕСЛИ</h2>
+      <ul class="list-square text-lg max-w-2xl mx-auto space-y-4">
+        <li>Застряли на одном уровне и хотите новых результатов</li>
+        <li>Не понимаете, что делать дальше</li>
+        <li>Не чувствуете удовлетворения, несмотря на внешний успех</li>
+        <li>Покупаете курсы, но остаётесь на месте</li>
+        <li>Хотите почувствовать жизнь по-новому</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Как проходит разбор -->
+  <section id="how" class="py-16 bg-gray-900" data-aos="fade-up">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">КАК ПРОХОДИТ ПРОДЮСЕРСКИЙ РАЗБОР</h2>
+      <ul class="list-square text-lg max-w-2xl mx-auto space-y-4">
+        <li><strong>Анализ текущей ситуации:</strong> Где вы теряете свои ресурсы</li>
+        <li><strong>Рекомендации по улучшению:</strong> Только индивидуальные решения</li>
+        <li><strong>Инструменты контроля:</strong> Научитесь управлять своим развитием</li>
+        <li><strong>Удобный формат разбора:</strong> Созвон или лично (если в одном городе)</li>
+        <li><em>Дополнительное общение в чате и домашние задания</em></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Почему выбирают меня -->
+  <section id="why" class="py-16 bg-gray-900" data-aos="fade-up">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">ПОЧЕМУ КЛИЕНТЫ ВЫБИРАЮТ МЕНЯ?</h2>
+      <ul class="list-square text-lg max-w-2xl mx-auto space-y-4">
+        <li>Уникальный индивидуальный подход без шаблонов</li>
+        <li>Опыт продюсера: Даю фундаментальные инструменты, на которых строится мышление</li>
+        <li>Возможность обрести контроль над своим развитием и изменениями</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Стоимость -->
+  <section id="pricing" class="py-16 bg-gray-900" data-aos="fade-up">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">СТОИМОСТЬ И ВАРИАНТЫ РАБОТЫ</h2>
+      <ul class="list-square text-lg max-w-2xl mx-auto space-y-4">
+        <li><strong>Разбор (1–3 часа):</strong> 10,000 руб. — «Схема роста + 3 приоритета»</li>
+        <li><strong>Комплекс (4 встречи + чат):</strong> 30,000 руб. — «Полная перезагрузка за месяц»</li>
+        <li><em>Бонусом: домашние задания в чате</em></li>
+      </ul>
+      <p class="text-xl md:text-2xl font-semibold text-center mt-8">Осталось 3 места на этой неделе</p>
+      <form id="contact-form" class="max-w-md mx-auto mt-6">
+        <input type="text" name="name" placeholder="Ваше имя" required class="w-full p-3 mb-4 bg-gray-700 text-white border border-gray-600 rounded-lg">
+        <input type="email" name="email" placeholder="Ваш email" required class="w-full p-3 mb-4 bg-gray-700 text-white border border-gray-600 rounded-lg">
+        <textarea name="message" placeholder="Ваше сообщение" class="w-full p-3 mb-4 bg-gray-700 text-white border border-gray-600 rounded-lg" rows="4"></textarea>
+        <button type="submit" class="malachite text-white px-6 py-3 rounded-full font-semibold text-lg hover:scale-105 transition-transform">Забронировать место</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer class="bg-gray-900 py-8 text-center" data-aos="fade-up">
+    <div class="container mx-auto px-4">
+      <p class="text-lg mb-4">Telegram: <a href="[ВАШ_TELEGRAM]" class="underline">@ваш_ник</a></p>
+      <p class="text-lg mb-4">Email: <a href="mailto:[ВАШ_EMAIL]" class="underline">[ВАШ_EMAIL]</a></p>
+      <p class="text-lg">Хотите узнать, подойдёт ли вам разбор? Напишите мне в <a href="[ВАШ_WHATSAPP]" class="underline">WhatsApp</a>.</p>
+    </div>
+  </footer>
+
+  <script>
+    AOS.init({ duration: 800, once: true });
+
+    // EmailJS initialization (replace with your credentials)
+    emailjs.init("[ВАШ_EMAILJS_USER_ID]");
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      emailjs.sendForm('[ВАШ_EMAILJS_SERVICE_ID]', '[ВАШ_EMAILJS_TEMPLATE_ID]', this)
+        .then(() => alert('Заявка отправлена!'))
+        .catch(() => alert('Ошибка при отправке. Попробуйте позже.'));
+    });
+  </script>
+</body>
+</html>
