@@ -3,186 +3,240 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Продюсерский разбор</title>
+  <title>Марафон открытия</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <style>
     body {
-      font-family: 'PT Sans', sans-serif;
-      background-color: #1F1F1F; /* Granite background as per presentation */
+      font-family: 'PT Sans', 'Arial', sans-serif;
+      background: linear-gradient(135deg, #1F1F1F 0%, #252525 100%); /* Granite gradient */
       color: #FFFFFF;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    .header-bg {
+      background: #2D2D2D; /* Lighter granite for header */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     }
     .malachite {
-      background-color: #2E8B57; /* Malachite accent */
+      background-color: #2E8B57;
+      transition: all 0.3s ease;
     }
     .malachite:hover {
       background-color: #257A47;
     }
-    img.malachite-accent {
+    .hero-image {
       filter: grayscale(100%);
-      border: 4px solid #2E8B57;
-      box-shadow: 0 0 15px rgba(46, 139, 87, 0.7); /* Enhanced malachite glow */
-      background: #2E8B57; /* Malachite background for photo */
+      border: 8px solid #2E8B57;
+      box-shadow: 0 0 30px rgba(46, 139, 87, 0.9);
+      background: #2E8B57;
+      padding: 10px;
+      border-radius: 15px;
+      max-width: 350px;
+      max-height: 350px;
+      object-fit: cover;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .hero-image:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 40px rgba(46, 139, 87, 1.0);
     }
     h1, h2 {
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    ul {
-      list-style-type: square;
+      letter-spacing: 2px;
     }
     section {
-      border-bottom: 1px solid #2E8B57; /* Subtle malachite separator like PDF pages */
+      padding: 60px 0;
+      border-bottom: 4px solid #2E8B57;
+    }
+    .btn-super {
+      background: linear-gradient(45deg, #2E8B57, #257A47);
+      padding: 12px 24px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+    }
+    .btn-super:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(46, 139, 87, 0.6);
+    }
+    .parallax {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    nav a {
+      color: #D3D3D3;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #2E8B57;
+    }
+    .form-input {
+      background: #2D2D2D;
+      border: 2px solid #2E8B57;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .form-input:focus {
+      border-color: #257A47;
+      box-shadow: 0 0 10px rgba(46, 139, 87, 0.5);
     }
   </style>
 </head>
 <body>
   <!-- Хедер -->
-  <header class="sticky top-0 bg-gray-900 text-white py-4 z-10" data-aos="fade-down">
+  <header class="header-bg sticky top-0 z-10 py-6" data-aos="fade-down">
     <div class="container mx-auto px-4 flex justify-between items-center">
-      <h1 class="text-xl md:text-2xl font-bold">ПРОДЮСЕРСКИЙ РАЗБОР</h1>
-      <nav class="hidden md:flex space-x-6">
-        <a href="#about" class="hover:underline">Обо мне</a>
-        <a href="#needs" class="hover:underline">Кому нужен</a>
-        <a href="#how" class="hover:underline">Как проходит</a>
-        <a href="#why" class="hover:underline">Почему я</a>
-        <a href="#pricing" class="hover:underline">Стоимость</a>
+      <h1 class="text-3xl md:text-4xl font-bold">МАРАФОН ОТКРЫТИЯ</h1>
+      <nav class="hidden md:flex space-x-10">
+        <a href="#about" class="text-xl hover:text-[#2E8B57] transition-colors">Обо мне</a>
+        <a href="#needs" class="text-xl hover:text-[#2E8B57] transition-colors">Кому нужен</a>
+        <a href="#how" class="text-xl hover:text-[#2E8B57] transition-colors">Как проходит</a>
+        <a href="#why" class="text-xl hover:text-[#2E8B57] transition-colors">Почему я</a>
+        <a href="#pricing" class="text-xl hover:text-[#2E8B57] transition-colors">Стоимость</a>
       </nav>
-      <button class="md hidden text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <button class="md:hidden text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
         </svg>
       </button>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 text-white">
-      <a href="#about" class="block py-2 px-4 hover:bg-gray-800">Обо мне</a>
-      <a href="#needs" class="block py-2 px-4 hover:bg-gray-800">Кому нужен</a>
-      <a href="#how" class="block py-2 px-4 hover:bg-gray-800">Как проходит</a>
-      <a href="#why" class="block py-2 px-4 hover:bg-gray-800">Почему я</a>
-      <a href="#pricing" class="block py-2 px-4 hover:bg-gray-800">Стоимость</a>
+    <div id="mobile-menu" class="hidden md:hidden header-bg">
+      <a href="#about" class="block py-4 px-6 text-xl hover:bg-gray-800 transition-colors">Обо мне</a>
+      <a href="#needs" class="block py-4 px-6 text-xl hover:bg-gray-800 transition-colors">Кому нужен</a>
+      <a href="#how" class="block py-4 px-6 text-xl hover:bg-gray-800 transition-colors">Как проходит</a>
+      <a href="#why" class="block py-4 px-6 text-xl hover:bg-gray-800 transition-colors">Почему я</a>
+      <a href="#pricing" class="block py-4 px-6 text-xl hover:bg-gray-800 transition-colors">Стоимость</a>
     </div>
   </header>
 
-  <!-- Главный экран -->
-  <section class="bg-gray-900 py-20 text-center" data-aos="fade-up">
-    <div class="container mx-auto px-4">
-      <h1 class="text-3xl md:text-4xl font-bold mb-4">ПРОДЮСЕРСКИЙ РАЗБОР</h1>
-      <p class="text-lg md:text-xl mb-6 max-w-2xl mx-auto">Перезагрузка мышления за 2 дня</p>
-      <img src="[URL_ВАШЕГО_ФОТО]" alt="Егор Павлов" class="mx-auto mb-6 w-48 h-48 object-cover rounded-full malachite-accent">
-      <p class="text-lg md:text-xl mb-6 max-w-2xl mx-auto">Сломайте ограничивающие убеждения, освойте инструменты прорыва и начните действовать по-новому. Проверено на топ-артистах, бизнесменах и блогерах.</p>
-      <a href="#pricing" class="inline-block malachite text-white px-6 py-3 rounded-full font-semibold text-lg hover:scale-105 transition-transform">Записаться на разбор</a>
+  <!-- Геройский раздел -->
+  <section class="bg-gray-900 py-32 text-center relative overflow-hidden" data-aos="fade-up">
+    <div class="container mx-auto px-4 relative z-10">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6">МАРАФОН ОТКРЫТИЯ</h1>
+      <p class="text-2xl md:text-3xl mb-8 max-w-4xl mx-auto">Откройте новый путь к успеху за 2 дня</p>
+      <div class="hero-image-container flex justify-center mb-10">
+        <img src="[URL_ВАШЕГО_ФОТО]" alt="Егор Павлов" class="hero-image">
+      </div>
+      <p class="text-2xl md:text-3xl mb-10 max-w-4xl mx-auto">Превратите свои цели в реальность с проверенными стратегиями от топ-эксперта.</p>
+      <a href="#pricing" class="btn-super text-white text-xl font-semibold">Присоединиться сейчас</a>
     </div>
+    <div class="parallax bg-[url('https://via.placeholder.com/1920x1080?text=Background+Image')] opacity-20 absolute inset-0 z-0"></div>
   </section>
 
   <!-- Обо мне -->
-  <section id="about" class="py-16 bg-gray-900" data-aos="fade-up">
+  <section id="about" class="py-20 bg-gray-900" data-aos="fade-up">
     <div class="container mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">ЕГОР ПАВЛОВ — ПРОДЮСЕР И НАСТАВНИК</h2>
-      <ul class="list-square text-lg max-w-2xl mx-auto space-y-4">
-        <li>9 лет в продюсировании проектов и топ-артистов, сотрудничал с: Сергей Жорин (Адвокат Моргена), Эмиль Иманов, Влад Соколовский и сотня других блогеров.</li>
-        <li>10 лет в маркетинге и проведении рекламных кампаний и масштабировании проектов (Третьяковская галерея, Papa Johns, Тинькофф банк и другие).</li>
-        <li>Создатель шоу и образовательных программ, которые меняют жизни.</li>
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-12">ЕГОР ПАВЛОВ — ЭКСПЕРТ И МЕНТОР</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="text-center p-6 bg-[#2D2D2D]/50 rounded-lg">
+          <p class="text-lg md:text-xl">9 лет в продюсировании топ-артистов: Сергей Жорин, Эмиль Иманов, Влад Соколовский и другие.</p>
+        </div>
+        <div class="text-center p-6 bg-[#2D2D2D]/50 rounded-lg">
+          <p class="text-lg md:text-xl">10 лет в маркетинге: Третьяковская галерея, Papa Johns, Тинькофф банк.</p>
+        </div>
+        <div class="text-center p-6 bg-[#2D2D2D]/50 rounded-lg">
+          <p class="text-lg md:text-xl">Создатель шоу и программ, меняющих жизни.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Кому нужен марафон -->
+  <section id="needs" class="py-20 bg-gray-900" data-aos="fade-up">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-12">ВАМ НУЖЕН МАРАФОН, ЕСЛИ</h2>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto text-lg md:text-xl">
+        <li class="p-4 bg-[#2D2D2D]/50 rounded-lg">Застряли на одном уровне и хотите новых результатов</li>
+        <li class="p-4 bg-[#2D2D2D]/50 rounded-lg">Не понимаете, что делать дальше</li>
+        <li class="p-4 bg-[#2D2D2D]/50 rounded-lg">Не чувствуете удовлетворения, несмотря на успех</li>
+        <li class="p-4 bg-[#2D2D2D]/50 rounded-lg">Покупаете курсы, но не двигаетесь вперед</li>
+        <li class="p-4 bg-[#2D2D2D]/50 rounded-lg">Хотите открыть новую главу в жизни</li>
       </ul>
     </div>
   </section>
 
-  <!-- С кем работал -->
-  <section id="collaborations" class="py-16 bg-gray-900" data-aos="fade-up">
+  <!-- Как проходит марафон -->
+  <section id="how" class="py-20 bg-gray-900" data-aos="fade-up">
     <div class="container mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">С КЕМ РАБОТАЛ</h2>
-      <ul class="list-square text-lg max-w-2xl mx-auto space-y-4">
-        <li>Сергей Жорин (Адвокат Моргена)</li>
-        <li>Эмиль Иманов</li>
-        <li>Влад Соколовский</li>
-        <li>Сотня других блогеров</li>
-        <li>Третьяковская галерея</li>
-        <li>Papa Johns</li>
-        <li>Тинькофф банк</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Кому нужен разбор -->
-  <section id="needs" class="py-16 bg-gray-900" data-aos="fade-up">
-    <div class="container mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">ВАМ НЕОБХОДИМ РАЗБОР, ЕСЛИ</h2>
-      <ul class="list-square text-lg max-w-2xl mx-auto space-y-4">
-        <li>Застряли на одном уровне и хотите новых результатов</li>
-        <li>Не понимаете, что делать дальше</li>
-        <li>Не чувствуете удовлетворения, несмотря на внешний успех</li>
-        <li>Покупаете курсы, но остаётесь на месте</li>
-        <li>Хотите почувствовать жизнь по-новому</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Как проходит разбор -->
-  <section id="how" class="py-16 bg-gray-900" data-aos="fade-up">
-    <div class="container mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">КАК ПРОХОДИТ ПРОДЮСЕРСКИЙ РАЗБОР</h2>
-      <ul class="list-square text-lg max-w-2xl mx-auto space-y-4">
-        <li><strong>Анализ текущей ситуации:</strong> Где вы теряете свои ресурсы</li>
-        <li><strong>Рекомендации по улучшению:</strong> Только индивидуальные решения</li>
-        <li><strong>Инструменты контроля:</strong> Научитесь управлять своим развитием</li>
-        <li><strong>Удобный формат разбора:</strong> Созвон или лично (если в одном городе)</li>
-        <li><em>Дополнительное общение в чате и домашние задания</em></li>
-      </ul>
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-12">КАК ПРОХОДИТ МАРАФОН ОТКРЫТИЯ</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div class="p-6 bg-[#2D2D2D]/50 rounded-lg">
+          <p class="text-lg md:text-xl"><strong>Анализ:</strong> Определим, где вы теряете ресурсы.</p>
+        </div>
+        <div class="p-6 bg-[#2D2D2D]/50 rounded-lg">
+          <p class="text-lg md:text-xl"><strong>Рекомендации:</strong> Индивидуальные стратегии успеха.</p>
+        </div>
+        <div class="p-6 bg-[#2D2D2D]/50 rounded-lg">
+          <p class="text-lg md:text-xl"><strong>Инструменты:</strong> Управление своим развитием.</p>
+        </div>
+        <div class="p-6 bg-[#2D2D2D]/50 rounded-lg">
+          <p class="text-lg md:text-xl"><strong>Формат:</strong> Созвон или лично (по договоренности).</p>
+        </div>
+      </div>
+      <p class="text-center mt-6 text-lg md:text-xl italic">+ Дополнительный чат и задания</p>
     </div>
   </section>
 
   <!-- Почему выбирают меня -->
-  <section id="why" class="py-16 bg-gray-900" data-aos="fade-up">
+  <section id="why" class="py-20 bg-gray-900" data-aos="fade-up">
     <div class="container mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">ПОЧЕМУ КЛИЕНТЫ ВЫБИРАЮТ МЕНЯ?</h2>
-      <ul class="list-square text-lg max-w-2xl mx-auto space-y-4">
-        <li>Уникальный индивидуальный подход без шаблонов</li>
-        <li>Опыт продюсера: Даю фундаментальные инструменты, на которых строится мышление</li>
-        <li>Возможность обрести контроль над своим развитием и изменениями</li>
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-12">ПОЧЕМУ ВЫБИРАЮТ МЕНЯ?</h2>
+      <ul class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto text-lg md:text-xl">
+        <li class="p-4 bg-[#2D2D2D]/50 rounded-lg text-center">Уникальный подход без шаблонов</li>
+        <li class="p-4 bg-[#2D2D2D]/50 rounded-lg text-center">Фундаментальные инструменты от эксперта</li>
+        <li class="p-4 bg-[#2D2D2D]/50 rounded-lg text-center">Контроль над вашим развитием</li>
       </ul>
     </div>
   </section>
 
   <!-- Стоимость -->
-  <section id="pricing" class="py-16 bg-gray-900" data-aos="fade-up">
+  <section id="pricing" class="py-20 bg-gray-900" data-aos="fade-up">
     <div class="container mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">СТОИМОСТЬ И ВАРИАНТЫ РАБОТЫ</h2>
-      <ul class="list-square text-lg max-w-2xl mx-auto space-y-4">
-        <li><strong>Разбор (1–3 часа):</strong> 10,000 руб. — «Схема роста + 3 приоритета»</li>
-        <li><strong>Комплекс (4 встречи + чат):</strong> 30,000 руб. — «Полная перезагрузка за месяц»</li>
-        <li><em>Бонусом: домашние задания в чате</em></li>
-      </ul>
-      <p class="text-xl md:text-2xl font-semibold text-center mt-8">Осталось 3 места на этой неделе</p>
-      <form id="contact-form" class="max-w-md mx-auto mt-6">
-        <input type="text" name="name" placeholder="Ваше имя" required class="w-full p-3 mb-4 bg-gray-700 text-white border border-gray-600 rounded-lg">
-        <input type="email" name="email" placeholder="Ваш email" required class="w-full p-3 mb-4 bg-gray-700 text-white border border-gray-600 rounded-lg">
-        <textarea name="message" placeholder="Ваше сообщение" class="w-full p-3 mb-4 bg-gray-700 text-white border border-gray-600 rounded-lg" rows="4"></textarea>
-        <button type="submit" class="malachite text-white px-6 py-3 rounded-full font-semibold text-lg hover:scale-105 transition-transform">Забронировать место</button>
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-12">СТОИМОСТЬ МАРАФОНА</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="p-6 bg-[#2D2D2D]/50 rounded-lg text-center">
+          <p class="text-xl md:text-2xl"><strong>Базовый марафон:</strong> 10,000 руб.</p>
+          <p class="text-lg md:text-xl">Схема роста + 3 приоритета</p>
+        </div>
+        <div class="p-6 bg-[#2D2D2D]/50 rounded-lg text-center">
+          <p class="text-xl md:text-2xl"><strong>Полный курс:</strong> 30,000 руб.</p>
+          <p class="text-lg md:text-xl">4 встречи + чат, полная перезагрузка</p>
+        </div>
+      </div>
+      <p class="text-center mt-6 text-lg md:text-xl italic">Бонус: домашние задания в чате</p>
+      <p class="text-2xl md:text-3xl font-semibold text-center mt-8">Осталось 3 места на 18 июля 2025!</p>
+      <form id="contact-form" class="max-w-xl mx-auto mt-10">
+        <input type="text" name="name" placeholder="Ваше имя" required class="form-input w-full p-4 mb-4 rounded-lg">
+        <input type="email" name="email" placeholder="Ваш email" required class="form-input w-full p-4 mb-4 rounded-lg">
+        <textarea name="message" placeholder="Ваше сообщение" class="form-input w-full p-4 mb-4 rounded-lg" rows="5"></textarea>
+        <button type="submit" class="btn-super text-white text-xl font-semibold">Забронировать место</button>
       </form>
     </div>
   </section>
 
   <!-- Футер -->
-  <footer class="bg-gray-900 py-8 text-center" data-aos="fade-up">
+  <footer class="bg-gray-900 py-12 text-center" data-aos="fade-up">
     <div class="container mx-auto px-4">
-      <p class="text-lg mb-4">Telegram: <a href="[ВАШ_TELEGRAM]" class="underline">@ваш_ник</a></p>
-      <p class="text-lg mb-4">Email: <a href="mailto:[ВАШ_EMAIL]" class="underline">[ВАШ_EMAIL]</a></p>
-      <p class="text-lg">Хотите узнать, подойдёт ли вам разбор? Напишите мне в <a href="[ВАШ_WHATSAPP]" class="underline">WhatsApp</a>.</p>
+      <p class="text-xl mb-4">Telegram: <a href="[ВАШ_TELEGRAM]" class="underline text-[#2E8B57] hover:text-[#257A47] transition-colors">@ваш_ник</a></p>
+      <p class="text-xl mb-4">Email: <a href="mailto:[ВАШ_EMAIL]" class="underline text-[#2E8B57] hover:text-[#257A47] transition-colors">[ВАШ_EMAIL]</a></p>
+      <p class="text-xl">Свяжитесь в <a href="[ВАШ_WHATSAPP]" class="underline text-[#2E8B57] hover:text-[#257A47] transition-colors">WhatsApp</a> для консультации.</p>
     </div>
   </footer>
 
   <script>
-    AOS.init({ duration: 800, once: true });
+    AOS.init({ duration: 1200, once: true });
 
-    // EmailJS initialization (replace with your credentials)
+    // EmailJS initialization
     emailjs.init("[ВАШ_EMAILJS_USER_ID]");
 
     document.getElementById('contact-form').addEventListener('submit', function(event) {
       event.preventDefault();
       emailjs.sendForm('[ВАШ_EMAILJS_SERVICE_ID]', '[ВАШ_EMAILJS_TEMPLATE_ID]', this)
-        .then(() => alert('Заявка отправлена!'))
+        .then(() => alert('Заявка отправлена! Спасибо!'))
         .catch(() => alert('Ошибка при отправке. Попробуйте позже.'));
     });
   </script>
